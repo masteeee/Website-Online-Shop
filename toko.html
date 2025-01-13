@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko | Last Resort Clone</title>
+    <style>
+        /* Gaya halaman */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+            background-image: url(img/background.webp);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Overlay gelap di latar belakang */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Gelap dengan transparansi 50% */
+            z-index: -1; /* Menempatkan overlay di belakang konten */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #111;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+
+        .product p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .product .price {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .add-to-cart {
+            background-color: #e60000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #ff3333;
+        }
+
+        .buy-now {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .buy-now:hover {
+            background-color: #0056b3;
+        }
+
+        .cart-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #111;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-icon span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff3333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+        }
+
+        .cart-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cart-animation img {
+            width: 50px;
+            height: auto;
+            position: absolute;
+            animation: moveToCart 1s forwards;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            font-size: 0.9rem;
+        }
+
+        @keyframes moveToCart {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                transform: translate(100vw, 100vh) scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="depan.html">
+            <img src="img/logo3.png" alt="Logo">
+        </a>
+        <nav>
+            <a href="tentang.html">Tentang</a>
+            <a href="toko.html">Toko</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Produk Sepatu</h2>
+        <div class="product-container">
+            <!-- Contoh produk -->
+            <div class="product">
+                <img src="img/shoes1.webp" alt="Sepatu 1">
+                <h3>Sepatu Keren 1</h3>
+                <p>Deskripsi sepatu keren 1</p>
+                <p class="price">Rp 500.000</p>
+                <button class="add-to-cart" data-product="shoes1.webp">Tambahkan ke Keranjang</button>
+                <button class="buy-now" data-product="shoes1.webp">Beli Sekarang</button>
+            </div>
+            <div class="product">
+                <img src="img/shoes2.webp" alt="Sepatu 1">
+                <h3>Sepatu Keren 1</h3>
+                <p>Deskripsi sepatu keren 1</p>
+                <p class="price">Rp 500.000</p>
+                <button class="add-to-cart" data-product="shoes2.webp">Tambahkan ke Keranjang</button>
+                <button class="buy-now" data-product="shoes2.webp">Beli Sekarang</button>
+            </div>
+            <div class="product">
+                <img src="img/shoes3.webp" alt="Sepatu 1">
+                <h3>Sepatu Keren 1</h3>
+                <p>Deskripsi sepatu keren 1</p>
+                <p class="price">Rp 500.000</p>
+                <button class="add-to-cart" data-product="shoes3.webp">Tambahkan ke Keranjang</button>
+                <button class="buy-now" data-product="shoes3.webp">Beli Sekarang</button>
+            </div>
+            <div class="product">
+                <img src="img/shoes4.webp" alt="Sepatu 1">
+                <h3>Sepatu Keren 1</h3>
+                <p>Deskripsi sepatu keren 1</p>
+                <p class="price">Rp 500.000</p>
+                <button class="add-to-cart" data-product="shoes4.webp">Tambahkan ke Keranjang</button>
+                <button class="buy-now" data-product="shoes4.webp">Beli Sekarang</button>
+            </div>
+            <!-- Produk lainnya dapat ditambahkan di sini... -->
+        </div>
+    </section>
+
+    <!-- Ikon Keranjang -->
+    <div class="cart-icon">
+        🛒 <span id="cart-count">0</span>
+    </div>
+
+    <!-- Animasi untuk menambahkan ke keranjang -->
+    <div class="cart-animation">
+        <img src="img/background.webp" alt="Animasi Keranjang" id="cart-animation-img">
+    </div>
+
+    <script>
+        let cartCount = 0;
+        const cartIcon = document.getElementById('cart-count');
+        const cartAnimation = document.querySelector('.cart-animation');
+        const cartAnimationImg = document.getElementById('cart-animation-img');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const buyNowButtons = document.querySelectorAll('.buy-now');
+
+        // Array untuk menyimpan item keranjang
+        const cartItems = [];
+
+        // Fungsi untuk menambahkan item ke keranjang
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const product = e.target.closest('.product');
+                const productImage = product.querySelector('img').src;
+                const productName = product.querySelector('h3').textContent;
+                const productPrice = product.querySelector('.price').textContent;
+
+                // Menambahkan produk ke array cartItems
+                cartItems.push({ name: productName, image: productImage, price: productPrice });
+
+                // Memperbarui jumlah keranjang
+                cartCount++;
+                cartIcon.textContent = cartCount;
+
+                // Menampilkan animasi untuk produk yang ditambahkan
+                cartAnimationImg.src = productImage;
+                cartAnimation.style.opacity = 1;
+
+                // Menyembunyikan animasi setelah beberapa detik
+                setTimeout(() => {
+                    cartAnimation.style.opacity = 0;
+                }, 1000);
+            });
+        });
+
+        // Fungsi untuk membeli langsung
+        buyNowButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const product = e.target.closest('.product');
+                const productImage = product.querySelector('img').src;
+                const productName = product.querySelector('h3').textContent;
+                const productPrice = product.querySelector('.price').textContent;
+
+                // Menambahkan produk langsung ke cartItems
+                cartItems.push({ name: productName, image: productImage, price: productPrice });
+
+                // Menyimpan item keranjang dalam sessionStorage untuk bertahan antar halaman
+                sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                // Redirect ke halaman checkout
+                window.location.href = 'checkout.html';
+            });
+        });
+
+        // Menavigasi ke halaman checkout
+        cartIcon.addEventListener('click', () => {
+            // Menyimpan item keranjang dalam sessionStorage untuk bertahan antar halaman
+            sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+            window.location.href = 'checkout.html';  // Redirect ke halaman checkout
+        });
+    </script>
+
+<footer>
+    &copy; 2024 Kelompok2
+</footer>
+
+</body>
+</html>

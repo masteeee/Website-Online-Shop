@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok 2</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #222; /* Warna latar belakang yang lebih gelap */
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #111;
+        }
+        header img {
+            height: 40px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            background: url(img/background.webp) no-repeat center center/cover;
+            animation: moveBackground 10s linear infinite; /* Animasi */
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); /* Overlay hitam dengan transparansi untuk gelapkan gambar */
+            z-index: 1; /* Overlay di atas gambar, di bawah konten */
+        }
+        .hero div {
+            position: relative;
+            z-index: 2; /* Konten berada di atas overlay */
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        /* Animasi latar belakang bergerak */
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            50% { background-position: 100% 0; }
+            100% { background-position: 0 0; }
+        }
+        .section {
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="depan.html">
+            <img src="img/logo3.png" alt="Logo">
+        </a>
+        <nav>
+            <a href="tentang.html">Tentang</a>
+            <a href="toko.html">Toko</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Selamat Datang di Toko Kelompok 2</h1>
+            <p>Desain minimalis bertemu dengan fungsionalitas.</p>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>Tentang Kami</h2>
+        <p>Web ini dibuat untuk memenuhi Tugas Akhir Pemograman Web.</p>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2>Galeri</h2>
+        <div class="gallery">
+            <img src="img/shoes1.webp" alt="Gambar Galeri 1">
+            <img src="img/shoes2.webp" alt="Gambar Galeri 2">
+            <img src="img/shoes3.webp" alt="Gambar Galeri 3">
+            <img src="img/shoes4.webp" alt="Gambar Galeri 4">
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Kontak Kami</h2>
+        <p>Email: Kelompok2@gmail.com</p>
+        <p>Telepon: +123 456 7890</p>
+    </section>
+
+    <footer>
+        &copy; 2024 KELOMPOK 2
+    </footer>
+</body>
+</html>

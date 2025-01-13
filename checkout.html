@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Last Resort Clone</title>
+    <style>
+        /* Gaya halaman */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-image: url(img/background.webp);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Overlay gelap di latar belakang */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Gelap dengan transparansi 50% */
+            z-index: -1; /* Menempatkan overlay di belakang konten */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #111;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .checkout-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-checkout {
+            background-color: #000;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            width: 60%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-checkout img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            flex: 1;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .product-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product-details p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .product-details .price {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .size-selector {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #222;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .checkout-button {
+            background-color: #e60000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .checkout-button:hover {
+            background-color: #ff3333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="depan.html">
+            <img src="img/logo3.png" alt="Logo">
+        </a>
+        <nav>
+            <a href="tentang.html">Tentang</a>
+            <a href="toko.html">Toko</a>
+            <a href="contact.html">Kontak</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Checkout Produk</h2>
+        <div class="checkout-container">
+            <!-- Contoh produk di keranjang -->
+            <div class="product-checkout">
+                <img src="img/shoes1.webp" alt="Sepatu 1">
+                <div class="product-details">
+                    <h3>Sepatu Keren 1</h3>
+                    <p>Deskripsi sepatu keren 1. Sepatu ini cocok untuk berbagai acara dan nyaman digunakan sehari-hari.</p>
+                    <p class="price">Rp 500.000</p>
+                    <select class="size-selector">
+                        <option value="S">Ukuran S</option>
+                        <option value="M">Ukuran M</option>
+                        <option value="L">Ukuran L</option>
+                        <option value="XL">Ukuran XL</option>
+                    </select>
+                    <button class="checkout-button">Proses Pembayaran</button>
+                </div>
+            </div>
+            <!-- Produk lain dapat ditambahkan di sini -->
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Kelompok2
+    </footer>
+
+    <script>
+        // Menambahkan aksi pada tombol checkout
+        const checkoutButtons = document.querySelectorAll('.checkout-button');
+        checkoutButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert("Pembelian berhasil! Anda akan diarahkan ke halaman utama.");
+                window.location.href = 'depan.html'; // Arahkan ke halaman utama
+            });
+        });
+    </script>
+</body>
+</html>

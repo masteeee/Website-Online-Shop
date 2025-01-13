@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | Last Resort Clone</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #111;
+        }
+        header img {
+            height: 40px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            position: relative;
+            background: url(img/background.webp) no-repeat center center/cover;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .hero div {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .team {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .team-member {
+            background-color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="depan.html">
+            <img src="img/logo3.png" alt="Logo">
+        </a>        
+        <nav>
+            <a href="tentang.html">Tentang</a>
+            <a href="toko.html">Toko</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Tentang Kami</h1>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Anggota Kelompok</h2>
+        <div class="team">
+            <div class="team-member">
+                
+                <h3>Muhammad Ario Ardhi</h3>
+                <p>NIM : 221011403129</p>
+            </div>
+            <div class="team-member">
+                
+                <h3>Mulya Adi Ute</h3>
+                <p>NIM : 221011401587</p>
+            </div>
+            <div class="team-member">
+                
+                <h3>Anisa Karenina</h3>
+                <p>NIM : 221011400758</p>
+            </div>
+            <div class="team-member">
+                
+                <h3>Aditya Hafiz</h3>
+                <p>NIM : 221011403377</p>
+            </div>
+            <div class="team-member">
+                
+                <h3>Muhammad Edria Zaiz</h3>
+                <p>NIM : 221011401432</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Kelompok2
+    </footer>
+</body>
+</html>
